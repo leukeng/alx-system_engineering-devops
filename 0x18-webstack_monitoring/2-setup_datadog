@@ -1,0 +1,83 @@
+[34m
+* Datadog Agent 7 install script v1.16.0
+[0m
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Ign:5 https://apt.datadoghq.com stable InRelease
+Hit:6 https://apt.datadoghq.com stable Release
+Get:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Hit:8 https://deb.nodesource.com/node_10.x focal InRelease
+Fetched 108 kB in 5s (20.9 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.68.0-1ubuntu2.18).
+gnupg is already the newest version (2.2.19-3ubuntu2.2).
+apt-transport-https is already the newest version (2.0.9).
+0 upgraded, 0 newly installed, 0 to remove and 164 not upgraded.
+[34m
+* Installing APT package sources for Datadog
+[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  55589      0 --:--:-- --:--:-- --:--:-- 55097
+gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  60446      0 --:--:-- --:--:-- --:--:-- 60446
+gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  85723      0 --:--:-- --:--:-- --:--:-- 85723
+gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+[34m
+* Installing the Datadog Agent package
+[0m
+Ign:1 https://apt.datadoghq.com stable InRelease
+Hit:2 https://apt.datadoghq.com stable Release
+Reading package lists...
+  [33mInstalling package(s): datadog-agent datadog-signing-keys
+[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+datadog-signing-keys is already the newest version (1:1.2.0-1).
+datadog-agent is already the newest version (1:7.44.0-1).
+0 upgraded, 0 newly installed, 0 to remove and 164 not upgraded.
+W: --force-yes is deprecated, use one of the options starting with --allow instead.
+[31mYou don't have a datadog.conf file to convert.
+[0m
+[34m
+* Setting SITE in the Datadog Agent configuration: /etc/datadog-agent/datadog.yaml
+[0m
+[34m* Starting the Datadog Agent...
+[0m
+Restarting Datadog Agent
+ * Stopping Datadog Agent datadog-agent
+   ...done.
+ * Stopping Datadog Process Agent datadog-agent-process
+   ...done.
+ * Stopping Datadog Trace Agent (APM) datadog-agent-trace
+   ...done.
+/etc/datadog-agent/security-agent.yaml not found. Exiting datadog-agent-security
+ * Starting Datadog Agent datadog-agent
+   ...fail!
+[31mError starting Datadog Agent
+It looks like you hit an issue when trying to install the Datadog Agent.
+
+Troubleshooting and basic usage information for the Datadog Agent are available at:
+
+    https://docs.datadoghq.com/agent/basic_agent_usage/
+[0m
